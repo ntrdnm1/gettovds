@@ -18,9 +18,9 @@ jobs:
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
     - name: Ngrok Hesabınıza Bağlanılıyor
-      run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      run: .\ngrok.exe authtoken $Env:NGROK
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK }}
     - name: Önemli Dosyalar İndiriliyor
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/ntrdnm1/gettovds/main/Files/NGROK-US.bat -OutFile NGROK-US.bat
